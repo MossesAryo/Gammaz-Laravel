@@ -15,7 +15,7 @@ Gammaz adalah sebuah situs web galeri yang dirancang untuk menampilkan berbagai 
 - **Framework**: Laravel
 - **Frontend**: Blade dengan Vite
 - **Database**: MySQL
-- **Styling**: Tailwind CSS
+- **Styling**: Tailwind CSS, Bootstrap
 - **Middleware**: Laravel Middleware untuk otentikasi dan otorisasi
 - **ORM**: Eloquent ORM untuk interaksi database
 - **Storage**: Laravel Storage Facades untuk manajemen file
