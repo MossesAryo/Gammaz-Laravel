@@ -12,7 +12,7 @@ class photo extends Model
     protected $table = 'foto'; 
 
     protected $fillable = [
-        'AlbumID', 'UserID','JudulFoto', 'DeskripsiFoto', 'TanggalUnggah', 'LokasiFoto', 
+        'AlbumID', 'UserID','JudulFoto', 'DeskripsiFoto', 'LokasiFoto', 
     ];
 
     public function album()

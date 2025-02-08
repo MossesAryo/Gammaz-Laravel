@@ -3,13 +3,14 @@
         <i class="fas fa-cloud-upload-alt mr-3 text-blue-400"></i>
         Upload New Photo
     </h2>
-    <form action="dashboard.html" method="post" enctype="multipart/form-data"
+    <form action="{{ route('uploadPhoto') }}" method="post" enctype="multipart/form-data"
         class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        @csrf
         <div class="space-y-4">
             <div>
                 <label class="block text-gray-400 mb-2">Photo Title</label>
                 <input type="text" name="JudulFoto"
-                    class="w-full bg-gray-700 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                    class="w-fulal bg-gray-700 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
                     required>
             </div>
             <div>
@@ -21,7 +22,7 @@
         <div class="space-y-4">
             <div>
                 <label class="block text-gray-400 mb-2">Upload Date</label>
-                <input type="date" name="TanggalUnggah"
+                <input type="date" name="created_at"
                     class="w-full bg-gray-700 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
                     required>
             </div>
@@ -31,9 +32,10 @@
                     class="w-full bg-gray-700 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
                     required>
                     <option value="">Select Album</option>
-                    <option value="Vacation">Vacation</option>
-                    <option value="Family">Family</option>
-                    <option value="Work">Work</option>
+                    @foreach ($album as $item)
+                    <option value="{{ $item->id }}">{{ $item->NamaAlbum }}</option>         
+                    @endforeach
+                    
                 </select>
             </div>
             <div>

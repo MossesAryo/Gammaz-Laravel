@@ -3,7 +3,8 @@
         <i class="fas fa-folder-plus mr-3 text-green-400"></i>
         Create New Album
     </h2>
-    <form action="dashboard.html" method="post" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <form action="{{ route('uploadAlbum') }}" method="post" enctype="multipart/form-data" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        @csrf
         <div class="space-y-4">
             <div>
                 <label class="block text-gray-400 mb-2">Album Name</label>
@@ -13,27 +14,16 @@
             </div>
             <div>
                 <label class="block text-gray-400 mb-2">Album Description</label>
-                <textarea name="DeskripsiAlbum" rows="3"
+                <textarea id="Deskripsi" name="Deskripsi" rows="3"
                     class="w-full bg-gray-700 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-400" required></textarea>
             </div>
         </div>
         <div class="space-y-4">
             <div>
                 <label class="block text-gray-400 mb-2">Creation Date</label>
-                <input type="date" name="TanggalDibuat"
+                <input type="date" name="created_at"
                     class="w-full bg-gray-700 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-400"
                     required>
-            </div>
-            <div>
-                <label class="block text-gray-400 mb-2">Album Privacy</label>
-                <select name="PrivasiAlbum"
-                    class="w-full bg-gray-700 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-400"
-                    required>
-                    <option value="">Select Privacy</option>
-                    <option value="Public">Public</option>
-                    <option value="Private">Private</option>
-                    <option value="Shared">Shared</option>
-                </select>
             </div>
         </div>
         <div class="md:col-span-2">
